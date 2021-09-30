@@ -1,22 +1,32 @@
-<style lang="less">
-</style>
+<style lang="less"></style>
 <template>
   <div class="container">
-    Hello world
+    <swiper>
+      <swiper-item>
+        <image src=""></image>
+      </swiper-item>
+    </swiper>
   </div>
 </template>
 
 <script>
-  import wepy from '@wepy/core';
-
-  wepy.page({
-    onLoad() {
-      console.log('onLoad')
-    }
-  });
+import wepy from '@wepy/core';
+import fetch from '../utils/fetch';
+wepy.page({
+  data: {
+    swiperList: [],
+  },
+  onLoad() {
+    this.getSwiperList();
+  },
+  async getSwiperList() {
+    let res = await fetch(`home/swiperdata`);
+    console.log(res);
+  },
+});
 </script>
 <config>
 {
-    navigationBarTitleText: 'test'
+    navigationBarTitleText: '首页'
 }
 </config>
