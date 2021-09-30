@@ -1,0 +1,22 @@
+<style lang="less">
+</style>
+<template>
+  <div class="container">
+    Hello world
+  </div>
+</template>
+
+<script>
+  import wepy from '@wepy/core';
+
+  wepy.page({
+    onLoad() {
+      console.log('onLoad')
+    }
+  });
+</script>
+<config>
+{
+    navigationBarTitleText: 'test'
+}
+</config>
